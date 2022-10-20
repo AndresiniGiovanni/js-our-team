@@ -61,7 +61,7 @@ function team() {
   function print() {
     for (const persona of persone) {
       const colPersona = document.createElement("div");
-      colPersona.classList.add("col-4");
+      colPersona.classList.add("col-4", "mycol");
 
       const cardPersona = document.createElement("div");
       cardPersona.classList.add("card", "mycard");
@@ -79,11 +79,14 @@ function team() {
       document.getElementById("mycontainer").append(colPersona);
 
       for (const key in persona) {
-        console.log(persona[key]);
-        const childElement = document.createElement("div");
-        childElement.innerHTML = persona[key];
-        cardBodyPersona.append(childElement);
+        console.log(`${persona[key]}`);
+        if (key !== "image") {
+          const childElement = document.createElement("div");
+          childElement.innerHTML = persona[key];
+          cardBodyPersona.append(childElement);
+        }
       }
+      console.log("-----");
     }
   }
   print();

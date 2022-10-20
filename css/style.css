@@ -1,4 +1,5 @@
-.mycard{
-    max-width: 80%;
-    
+
+.mycol{
+    display: flex;
+    justify-content: center;
 }
